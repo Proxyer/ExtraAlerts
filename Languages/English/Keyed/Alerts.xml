@@ -16,6 +16,9 @@
   <AlertEnemyNeedsRescue>Enemy downed</AlertEnemyNeedsRescue>
   <AlertEnemyNeedsRescueDesc>These enemies are incapacitated. You can capture them, strip them, or finish them off:\n\n{0}</AlertEnemyNeedsRescueDesc>
   
+  <AlertEntityDowned>Entity downed</AlertEntityDowned>
+  <AlertEntityDownedDesc>These anomalous entites are incapacitated. You can capture them or finish them off:\n\n{0}</AlertEntityDownedDesc>
+  
   <AlertAllyNeedsRescue>Ally downed</AlertAllyNeedsRescue>
   <AlertAllyNeedsRescueDesc>These allies are incapacitated. You might want to rescue them:\n\n{0}</AlertAllyNeedsRescueDesc>
   

@@ -11,6 +11,7 @@ namespace Z_MoreAlerts
         public static bool cb_hiddenEnemies = true;
         public static bool cb_enemyRescue = true;
         public static bool cb_allyRescue = true;
+        public static bool cb_entityDowned = true;
         public static bool cb_neutralRescue = true;
         public static bool cb_blight = true;
 
@@ -39,6 +40,7 @@ namespace Z_MoreAlerts
             Scribe_Values.Look(ref cb_hiddenEnemies, "cb_hiddenEnemies", false);
             Scribe_Values.Look(ref cb_enemyRescue, "cb_enemyRescue", true);
             Scribe_Values.Look(ref cb_allyRescue, "cb_allyRescue", true);
+            Scribe_Values.Look(ref cb_entityDowned, "cb_entityDowned", true);
             Scribe_Values.Look(ref cb_neutralRescue, "cb_neutralRescue", true);
             Scribe_Values.Look(ref cb_blight, "cb_blight", true);
 
@@ -94,6 +96,7 @@ namespace Z_MoreAlerts
             listing.CheckboxLabeled("AlertEnemyNeedsRescue".Translate(), ref ExtraAlertSettings.cb_enemyRescue, "AlertEnemyNeedsRescueDesc".Translate());
             listing.CheckboxLabeled("AlertAllyNeedsRescue".Translate(), ref ExtraAlertSettings.cb_allyRescue, "AlertAllyNeedsRescueDesc".Translate());
             listing.CheckboxLabeled("AlertNeutralNeedsRescue".Translate(), ref ExtraAlertSettings.cb_neutralRescue, "AlertNeutralNeedsRescueDesc".Translate());
+            listing.CheckboxLabeled("AlertEntityDowned".Translate(), ref ExtraAlertSettings.cb_neutralRescue, "AlertEntityDownedDesc".Translate());
             listing.CheckboxLabeled("AlertBlight".Translate(), ref ExtraAlertSettings.cb_blight, "AlertBlightDesc".Translate());
             listing.Gap();
 
