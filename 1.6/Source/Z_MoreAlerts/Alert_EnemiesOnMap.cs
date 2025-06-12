@@ -18,7 +18,11 @@ namespace Z_MoreAlerts
                 {
                     if (p.HostileTo(Faction.OfPlayer) && !p.Downed)
                     {
-                        yield return p;
+                        if(!Alert_HiddenEnemiesOnMap.IsHidden(p))
+                        {
+                            yield return p;
+
+                        }
                     }
                 }
             }

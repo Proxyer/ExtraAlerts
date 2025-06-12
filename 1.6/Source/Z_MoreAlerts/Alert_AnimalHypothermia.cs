@@ -17,7 +17,7 @@ namespace Z_MoreAlerts
             get
             {
                 this.hypothermicAnimalsResult.Clear();
-                List<Pawn> allMaps_Spawned = PawnsFinder.AllMaps_Spawned;
+                List<Pawn> allMaps_Spawned = PawnsFinder.AllMaps_Spawned.ToList();
                 for (int i = 0; i < allMaps_Spawned.Count; i++)
                 {
                     if (allMaps_Spawned[i].RaceProps.Animal && allMaps_Spawned[i].Faction == Faction.OfPlayer && allMaps_Spawned[i].health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Hypothermia, false)?.CurStageIndex >= 2)
