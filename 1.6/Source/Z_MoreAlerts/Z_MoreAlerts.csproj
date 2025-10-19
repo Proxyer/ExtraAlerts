@@ -117,7 +117,9 @@
     <Compile Include="Alert_WantToSleepWith.cs" />
     <Compile Include="ExtraAlertSettings.cs" />
     <Compile Include="MoreAlertsDefOf.cs" />
+    <Compile Include="Odyssey\Alert_PorcupineQuills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

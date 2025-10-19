@@ -39,7 +39,7 @@
   <AlertDeadMansApparelDesc>These colonists are wearing apparel from a corpse, which is making them sad:\n\n{0}\nGet them some clean clothing.</AlertDeadMansApparelDesc>
   
   <AlertHumanLeatherApparelSad>Unhappy human leather</AlertHumanLeatherApparelSad>
-  <AlertHumanLeatherApparelSadDesc>These colonists are wearing human leather apparel, which they find disturbing:\n\n{0}\ Get them clothing made of something else.</AlertHumanLeatherApparelSadDesc>
+  <AlertHumanLeatherApparelSadDesc>These colonists are wearing human leather apparel, which they find disturbing:\n\n{0}\nGet them clothing made of something else.</AlertHumanLeatherApparelSadDesc>
 
   <AlertWantToSleepWith>Lovers separated</AlertWantToSleepWith>
   <AlertWantToSleepWithDesc>These colonists want to sleep together. Consider assigning them a double bed.</AlertWantToSleepWithDesc>
@@ -85,5 +85,12 @@
   
   <AlertColonistNeedsRest>Colonist needs rest</AlertColonistNeedsRest>
   <AlertColonistNeedsRestDesc>These colonists are sick and need bed rest.</AlertColonistNeedsRestDesc>
+  
+ <!-- Odyssey-->
+ <ExtraAlerts_Odyssey>Odyssey</ExtraAlerts_Odyssey>
+ 
+ <AlertPorcupineQuills>Porcupine quills</AlertPorcupineQuills>
+ <AlertPorcupineQuillsDesc>These colonists have porcupine quills embedded in their skin. These are painful, and last until surgically removed:\n\n{0}</AlertPorcupineQuillsDesc>
+  
   
 </LanguageData>

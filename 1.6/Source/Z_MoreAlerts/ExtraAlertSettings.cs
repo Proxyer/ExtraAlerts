@@ -1,5 +1,6 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using Verse;
 
 
 namespace Z_MoreAlerts
@@ -32,6 +33,9 @@ namespace Z_MoreAlerts
         public static bool cb_trader = true;
         public static bool cb_tradeOrbital = true;
 
+        //Odyssey
+        public static bool cb_porqupineQuills = true;
+
 
         public override void ExposeData()
         {
@@ -56,10 +60,13 @@ namespace Z_MoreAlerts
             Scribe_Values.Look(ref cb_animalHypothermia, "cb_animalHypothermia", true);
             Scribe_Values.Look(ref cb_animalHeatstroke, "cb_animalHeatstroke", true);
 
-            // Other
+            // Misc
             Scribe_Values.Look(ref cb_unroofedElectrical, "cb_unroofedElectrical", true);
             Scribe_Values.Look(ref cb_trader, "cb_trader", true);
             Scribe_Values.Look(ref cb_tradeOrbital, "cb_tradeOrbital", true);
+
+            //Odyssey
+            Scribe_Values.Look(ref cb_porqupineQuills, "cb_porqupineQuills", true);
 
         }
     }
@@ -68,6 +75,8 @@ namespace Z_MoreAlerts
     public class ExtraAlertsMod : Mod
     {
         ExtraAlertSettings settings;
+        private static Vector2 scrollPosition = Vector2.zero;
+        private static float viewHeight;
 
         public ExtraAlertsMod(ModContentPack content) : base(content)
         {
@@ -76,9 +85,17 @@ namespace Z_MoreAlerts
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            inRect.width = 400f;
+            inRect.width = 450f;
+            Listing_Standard outerListing = new Listing_Standard();
+            outerListing.Begin(inRect);
+
+            Rect windowRect = outerListing.GetRect(inRect.height - outerListing.CurHeight).ContractedBy(4f);
+            Rect viewRect = new Rect(0f, 0f, 200f, 700f);
+            Widgets.BeginScrollView(windowRect, ref scrollPosition, viewRect, true);
+
+
             Listing_Standard listing = new Listing_Standard();
-            listing.Begin(inRect);
+            listing.Begin(viewRect);
 
             // Urgent
             Text.Font = GameFont.Medium;
@@ -128,9 +145,21 @@ namespace Z_MoreAlerts
             listing.CheckboxLabeled("AlertTradeCaravan".Translate(), ref ExtraAlertSettings.cb_trader, "AlertTradeCaravanDesc".Translate());
             listing.CheckboxLabeled("AlertOrbitalTrader".Translate(), ref ExtraAlertSettings.cb_tradeOrbital, "AlertOrbitalTraderDesc".Translate());
 
+            //Odyssey
+            if (ModsConfig.OdysseyActive)
+            {
+                listing.Gap();
+                Text.Font = GameFont.Medium;
+                listing.Label("ExtraAlerts_Odyssey".Translate());
+                Text.Font = GameFont.Small;
 
+                listing.CheckboxLabeled("AlertPorcupineQuills".Translate(), ref ExtraAlertSettings.cb_porqupineQuills, "AlertPorcupineQuillsDesc".Translate());
+            }
 
             listing.End();
+
+            Widgets.EndScrollView();
+            outerListing.End();
 
             base.DoSettingsWindowContents(inRect);
         }
