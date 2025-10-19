@@ -86,4 +86,11 @@
   <AlertColonistNeedsRest>入植者は休養が必要</AlertColonistNeedsRest>
   <AlertColonistNeedsRestDesc>この入植者たちは病気なので,ベッドでの休養が必要です.</AlertColonistNeedsRestDesc>
 
+ <!-- Odyssey-->
+ <ExtraAlerts_Odyssey>Odyssey</ExtraAlerts_Odyssey>
+
+ <AlertPorcupineQuills>ヤマアラシの針</AlertPorcupineQuills>
+ <AlertPorcupineQuillsDesc>これらの入植者たちの皮膚にはヤマアラシの針が刺さっており,それは痛みを伴って外科手術で除去するまで消えません:\n\n{0}</AlertPorcupineQuillsDesc>
+
+
 </LanguageData>
