@@ -90,7 +90,14 @@ namespace Z_MoreAlerts
             outerListing.Begin(inRect);
 
             Rect windowRect = outerListing.GetRect(inRect.height - outerListing.CurHeight).ContractedBy(4f);
-            Rect viewRect = new Rect(0f, 0f, 200f, 700f);
+
+            float viewheight = 600f;
+            if (ModsConfig.OdysseyActive)
+            {
+                viewheight += 100f;
+            }
+
+            Rect viewRect = new Rect(0f, 0f, 200f, viewheight);
             Widgets.BeginScrollView(windowRect, ref scrollPosition, viewRect, true);
 
 
