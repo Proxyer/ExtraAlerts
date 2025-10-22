@@ -77,6 +77,11 @@
   <AlertUnroofedElectrical>Unroofed electrical</AlertUnroofedElectrical>
   <AlertUnroofedElectricalDesc>These buildings are unroofed and will short circuit in rain.</AlertUnroofedElectricalDesc>
   
+  <AlertUnarmedCombatant>Combatant unarmed</AlertUnarmedCombatant>
+  <AlertUnarmedCombatantDesc>These colonists are combat-capable, but lack weapons:\n\n{0}</AlertUnarmedCombatantDesc>
+  <AlertChildCombatant>Include child combatants</AlertChildCombatant>
+  <AlertChildCombatantDesc>If enabled, this alert will include unarmed children.</AlertChildCombatantDesc>
+  
   <AlertTradeCaravan>Trader</AlertTradeCaravan>
   <AlertTradeCaravanDesc>A trader is visiting.</AlertTradeCaravanDesc>
   

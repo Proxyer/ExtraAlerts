@@ -30,6 +30,8 @@ namespace Z_MoreAlerts
 
         // Misc
         public static bool cb_unroofedElectrical = true;
+        public static bool cb_unarmedCombatant = true;
+        public static bool cb_childCombatant = false;
         public static bool cb_trader = true;
         public static bool cb_tradeOrbital = true;
 
@@ -62,6 +64,8 @@ namespace Z_MoreAlerts
 
             // Misc
             Scribe_Values.Look(ref cb_unroofedElectrical, "cb_unroofedElectrical", true);
+            Scribe_Values.Look(ref cb_unarmedCombatant, "cb_unarmedCombatant", true);
+            Scribe_Values.Look(ref cb_childCombatant, "cb_childCombatant", false);
             Scribe_Values.Look(ref cb_trader, "cb_trader", true);
             Scribe_Values.Look(ref cb_tradeOrbital, "cb_tradeOrbital", true);
 
@@ -91,13 +95,13 @@ namespace Z_MoreAlerts
 
             Rect windowRect = outerListing.GetRect(inRect.height - outerListing.CurHeight).ContractedBy(4f);
 
-            float viewheight = 600f;
+            float viewheight = 650f;
             if (ModsConfig.OdysseyActive)
             {
                 viewheight += 100f;
             }
 
-            Rect viewRect = new Rect(0f, 0f, 200f, viewheight);
+            Rect viewRect = new Rect(0f, 0f, 275f, viewheight);
             Widgets.BeginScrollView(windowRect, ref scrollPosition, viewRect, true);
 
 
@@ -120,7 +124,7 @@ namespace Z_MoreAlerts
             listing.CheckboxLabeled("AlertEnemyNeedsRescue".Translate(), ref ExtraAlertSettings.cb_enemyRescue, "AlertEnemyNeedsRescueDesc".Translate());
             listing.CheckboxLabeled("AlertAllyNeedsRescue".Translate(), ref ExtraAlertSettings.cb_allyRescue, "AlertAllyNeedsRescueDesc".Translate());
             listing.CheckboxLabeled("AlertNeutralNeedsRescue".Translate(), ref ExtraAlertSettings.cb_neutralRescue, "AlertNeutralNeedsRescueDesc".Translate());
-            listing.CheckboxLabeled("AlertEntityDowned".Translate(), ref ExtraAlertSettings.cb_neutralRescue, "AlertEntityDownedDesc".Translate());
+            //listing.CheckboxLabeled("AlertEntityDowned".Translate(), ref ExtraAlertSettings.cb_entityDowned, "AlertEntityDownedDesc".Translate());
             listing.CheckboxLabeled("AlertBlight".Translate(), ref ExtraAlertSettings.cb_blight, "AlertBlightDesc".Translate());
             listing.Gap();
 
@@ -149,6 +153,14 @@ namespace Z_MoreAlerts
             listing.Label("ExtraAlerts_Misc".Translate());
             Text.Font = GameFont.Small;
             listing.CheckboxLabeled("AlertUnroofedElectrical".Translate(), ref ExtraAlertSettings.cb_unroofedElectrical, "AlertUnroofedElectricalDesc".Translate());
+            listing.CheckboxLabeled("AlertUnarmedCombatant".Translate(), ref ExtraAlertSettings.cb_unarmedCombatant, "AlertUnarmedCombatantDesc".Translate());
+            if (!ExtraAlertSettings.cb_unarmedCombatant)
+            {
+                GUI.color = Color.gray;
+            }
+            listing.CheckboxLabeled("AlertChildCombatant".Translate(), ref ExtraAlertSettings.cb_childCombatant, "AlertChildCombatantDesc".Translate());
+            GUI.color = Color.white;
+
             listing.CheckboxLabeled("AlertTradeCaravan".Translate(), ref ExtraAlertSettings.cb_trader, "AlertTradeCaravanDesc".Translate());
             listing.CheckboxLabeled("AlertOrbitalTrader".Translate(), ref ExtraAlertSettings.cb_tradeOrbital, "AlertOrbitalTraderDesc".Translate());
 

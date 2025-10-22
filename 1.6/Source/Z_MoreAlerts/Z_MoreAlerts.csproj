@@ -110,6 +110,7 @@
     <Compile Include="Alert_NotBondedAnimalMaster.cs" />
     <Compile Include="Alert_SemiCritical.cs" />
     <Compile Include="Alert_SharingBedUnhappy.cs" />
+    <Compile Include="Alert_UnarmedCombatant.cs" />
     <Compile Include="Alert_TaintedClothing.cs" />
     <Compile Include="Alert_TraderOrbital.cs" />
     <Compile Include="Alert_TraderOnMap.cs" />
